@@ -258,7 +258,11 @@ html, body{
     }),
 })
     .then((response) => response.json())
-    .then((data) => console.log(data))
+    .then((data) => 
+    {
+      counter.textContent=`[ ${data}/12 ]`;
+      console.log(data)
+    })
     .catch((err) => console.log(err));
   
 </script>
