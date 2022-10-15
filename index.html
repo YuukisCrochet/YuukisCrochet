@@ -247,14 +247,19 @@ html, body{
 
     </div>
 <script>
-    counter = document.getElementById('counter');
-    fetch('https://secret-code-api.herokuapp.com/api/remain').then(
-  resp => resp.json() // this returns a promise
-).then(repos => {
-  console.log(repos)
-}).catch(ex => {
-  console.error(ex);
+  const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
+  const url = 'https://secret-code-api.herokuapp.com/api/remain';
+  var counter = document.getElementById('counter');
+  fetch(corsAnywhere + url, {
+    method: 'GET',
+    headers: new Headers({
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+    }),
 })
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((err) => console.log(err));
   
 </script>
 </body>
