@@ -250,7 +250,7 @@ html, body{
   const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
   const url = 'https://secret-code-api.herokuapp.com/api/remain';
   var counter = document.getElementById('counter');
-  fetch(corsAnywhere + url, {
+  fetch(url, {
     method: 'GET',
     headers: new Headers({
         'Content-Type': 'application/json',
